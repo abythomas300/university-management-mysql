@@ -38,3 +38,12 @@ CREATE TABLE courses(
  FOREIGN KEY(department) REFERENCES departments(department_id),
  FOREIGN KEY(instructor) REFERENCES instructors(instructor_id)
 );
+/*class_schedule table*/
+CREATE TABLE class_schedule(
+ schedule_id INT AUTO_INCREMENT,
+ day ENUM('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday') NOT NULL,
+ course INT,
+ classroom INT,
+ PRIMARY KEY(schedule_id),
+ FOREIGN KEY(course) REFERENCES courses(course_id)
+);
