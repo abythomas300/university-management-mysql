@@ -28,3 +28,13 @@ CREATE TABLE instructors(
  PRIMARY KEY(instructor_id),
  FOREIGN KEY(department) REFERENCES departments(department_id)
 );
+/*courses table*/
+CREATE TABLE courses(
+ course_id INT AUTO_INCREMENT,
+ course_name VARCHAR(255) NOT NULL,
+ department INT NOT NULL,
+ instructor INT,
+ PRIMARY KEY(course_id),
+ FOREIGN KEY(department) REFERENCES departments(department_id),
+ FOREIGN KEY(instructor) REFERENCES instructors(instructor_id)
+);
