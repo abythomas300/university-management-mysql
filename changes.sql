@@ -47,3 +47,14 @@ CREATE TABLE class_schedule(
  PRIMARY KEY(schedule_id),
  FOREIGN KEY(course) REFERENCES courses(course_id)
 );
+/*enrollments table (Junction Table for M:M relation between students and courses)*/
+CREATE TABLE enrollments(
+ enrollment_id INT AUTO_INCREMENT,
+ student_id INT NOT NULL,
+ course_id INT NOT NULL,
+ enrolled_date DATE,
+ PRIMARY KEY(enrollment_id),
+ FOREIGN KEY(student_id) REFERENCES students(student_id),
+ FOREIGN KEY(course_id) REFERENCES courses(course_id),
+ UNIQUE(student_id, course_id) /*To prevent duplicate entires - a record with already existing combination of student_id and course_id will be prevented from entering*/
+);
