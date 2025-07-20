@@ -147,3 +147,7 @@ departments.department_name FROM students
 INNER JOIN departments 
 ON students.department = departments.department_id
 ORDER BY students.student_id;
+/*list all courses taught by a specific instructor*/
+SELECT courses.course_name as 'Courses taught by Dr. Neha Singh' from courses INNER JOIN instructors
+ON courses.instructor = instructors.instructor_id 
+WHERE instructors.instructor_name = 'Dr. Neha Singh';
