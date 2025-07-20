@@ -139,3 +139,5 @@ UPDATE students SET phone_number = '+91 9612345670' WHERE student_id = 10;
 /*QUERIES - CRUD and JOIN operations*/
 /*updating a student's contact information*/
 UPDATE students SET phone_number = '+91 9996663332' WHERE student_id = 2;
+/*enrolling a student into a course*/
+INSERT INTO enrollments (student_id, course_id, enrolled_date) VALUES (1, 5, '2025-07-20');
