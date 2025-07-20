@@ -151,3 +151,8 @@ ORDER BY students.student_id;
 SELECT courses.course_name as 'Courses taught by Dr. Neha Singh' from courses INNER JOIN instructors
 ON courses.instructor = instructors.instructor_id 
 WHERE instructors.instructor_name = 'Dr. Neha Singh';
+/*show all students enrolled in a specific course*/
+SELECT students.student_name as 'Students who are enrolled for Linear Algebra course' FROM enrollments
+INNER JOIN students ON enrollments.student_id = students.student_id 
+WHERE enrollments.course_id = 5
+ORDER BY students.student_name;
