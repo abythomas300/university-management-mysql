@@ -123,3 +123,15 @@ INSERT INTO enrollments (enrollment_id, student_id, course_id, enrolled_date) VA
 (13, 9, 5, '2025-07-06'),
 (14, 10, 5, '2025-07-06'),
 (15, 10, 6, '2025-07-06');
+/*Adding phone number field to students table and sample data insertion*/
+ALTER TABLE students ADD phone_number VARCHAR(255);
+UPDATE students SET phone_number = '+91 9876543210' WHERE student_id = 1;
+UPDATE students SET phone_number = '+91 9123456789' WHERE student_id = 2;
+UPDATE students SET phone_number = '+91 9988776655' WHERE student_id = 3;
+UPDATE students SET phone_number = '+91 9012345678' WHERE student_id = 4;
+UPDATE students SET phone_number = '+91 9345678901' WHERE student_id = 5;
+UPDATE students SET phone_number = '+91 9765432109' WHERE student_id = 6;
+UPDATE students SET phone_number = '+91 9090909090' WHERE student_id = 7;
+UPDATE students SET phone_number = '+91 9823456712' WHERE student_id = 8;
+UPDATE students SET phone_number = '+91 9445566778' WHERE student_id = 9;
+UPDATE students SET phone_number = '+91 9612345670' WHERE student_id = 10;
