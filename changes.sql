@@ -141,3 +141,9 @@ UPDATE students SET phone_number = '+91 9612345670' WHERE student_id = 10;
 UPDATE students SET phone_number = '+91 9996663332' WHERE student_id = 2;
 /*enrolling a student into a course*/
 INSERT INTO enrollments (student_id, course_id, enrolled_date) VALUES (1, 5, '2025-07-20');
+/*display student details along with department name*/
+SELECT students.student_id, students.student_name, students.gender, students.email, students.dob, students.phone_number, 
+departments.department_name FROM students
+INNER JOIN departments 
+ON students.department = departments.department_id
+ORDER BY students.student_id;
