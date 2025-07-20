@@ -135,3 +135,7 @@ UPDATE students SET phone_number = '+91 9090909090' WHERE student_id = 7;
 UPDATE students SET phone_number = '+91 9823456712' WHERE student_id = 8;
 UPDATE students SET phone_number = '+91 9445566778' WHERE student_id = 9;
 UPDATE students SET phone_number = '+91 9612345670' WHERE student_id = 10;
+
+/*QUERIES - CRUD and JOIN operations*/
+/*updating a student's contact information*/
+UPDATE students SET phone_number = '+91 9996663332' WHERE student_id = 2;
