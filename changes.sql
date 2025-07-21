@@ -160,3 +160,7 @@ ORDER BY students.student_name;
 /*- - - AGGREGATION AND GROUPING - - -*/
 /*count number of students in each department*/
 SELECT department, COUNT(*) as 'No of students in this department' FROM STUDENTS GROUP BY department;
+/*list instructors with the number of courses they teach*/
+SELECT instructors.instructor_name, count(courses.course_id) as 'No of courses taught' FROM courses
+INNER JOIN instructors 
+ON courses.instructor=instructors.instructor_id GROUP BY instructors.instructor_name;
