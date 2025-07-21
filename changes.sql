@@ -156,3 +156,7 @@ SELECT students.student_name as 'Students who are enrolled for Linear Algebra co
 INNER JOIN students ON enrollments.student_id = students.student_id 
 WHERE enrollments.course_id = 5
 ORDER BY students.student_name;
+
+/*- - - AGGREGATION AND GROUPING - - -*/
+/*count number of students in each department*/
+SELECT department, COUNT(*) as 'No of students in this department' FROM STUDENTS GROUP BY department;
