@@ -178,9 +178,16 @@ SELECT * FROM students WHERE student_id NOT IN (SELECT student_id FROM enrollmen
 select students.student_name, courses.course_name from enrollments 
 INNER JOIN students ON enrollments.student_id = students.student_id
 INNER JOIN courses ON enrollments.course_id = courses.course_id;
+
+/*- - - INDEXES AND VIEWS - - - */
 /*create view named student_and_courses based on the result of previous query*/
 CREATE VIEW student_and_courses AS 
 SELECT students.student_name, courses.course_name FROM enrollments 
 INNER JOIN students ON enrollments.student_id = students.student_id
 INNER JOIN courses ON enrollments.course_id = courses.course_id;
-
+/*displaying view*/
+SELECT * FORM student_and_courses;
+/*index on student name*/
+CREATE INDEX stdname ON students(student_name)
+/*index on course title*/
+CREATE INDEX coursename ON courses(course_name)
