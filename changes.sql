@@ -170,3 +170,7 @@ INNER JOIN departments ON students.department=departments.department_id
 GROUP BY departments.department_id
 ORDER BY COUNT(student_id) DESC 
 LIMIT 1;
+
+/*- - - SUBQUERIES AND JOINS - - -*/
+/*students who are not enrolled in any course*/
+SELECT * FROM students WHERE student_id NOT IN (SELECT student_id FROM enrollments)
