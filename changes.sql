@@ -174,3 +174,7 @@ LIMIT 1;
 /*- - - SUBQUERIES AND JOINS - - -*/
 /*students who are not enrolled in any course*/
 SELECT * FROM students WHERE student_id NOT IN (SELECT student_id FROM enrollments)
+/*join to get student name and course name (multiple joins)*/
+select students.student_name, courses.course_name from enrollments 
+INNER JOIN students ON enrollments.student_id = students.student_id
+INNER JOIN courses ON enrollments.course_id = courses.course_id;
