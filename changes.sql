@@ -164,3 +164,9 @@ SELECT department, COUNT(*) as 'No of students in this department' FROM STUDENTS
 SELECT instructors.instructor_name, count(courses.course_id) as 'No of courses taught' FROM courses
 INNER JOIN instructors 
 ON courses.instructor=instructors.instructor_id GROUP BY instructors.instructor_name;
+/*find department with maximum number of students*/
+SELECT departments.department_name as 'Department Name', COUNT(student_id) as 'No. of students' FROM students
+INNER JOIN departments ON students.department=departments.department_id
+GROUP BY departments.department_id
+ORDER BY COUNT(student_id) DESC 
+LIMIT 1;
