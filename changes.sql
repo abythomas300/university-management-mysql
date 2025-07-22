@@ -178,6 +178,19 @@ SELECT * FROM students WHERE student_id NOT IN (SELECT student_id FROM enrollmen
 select students.student_name, courses.course_name from enrollments 
 INNER JOIN students ON enrollments.student_id = students.student_id
 INNER JOIN courses ON enrollments.course_id = courses.course_id;
+/*find instructors teaching the most courses (using only subquery)*/
+SELECT instructor_name FROM instructors WHERE instructor_id IN (
+	SELECT instructor FROM courses GROUP BY instructor HAVING COUNT(course_id) = (
+		SELECT MAX(course_count) FROM (	SELECT COUNT(course_id) AS course_count FROM courses GROUP BY instructor ) AS max_course_value
+	)
+);
+/*find instructors who teach the most courses (using only join)*/
+SELECT instructors.instructor_name, COUNT(courses.course_id) FROM courses
+INNER JOIN instructors ON courses.instructor = instructors.instructor_id 
+GROUP BY instructor
+ORDER BY COUNT(courses.course_id) DESC
+LIMIT 3;
+
 
 /*- - - INDEXES AND VIEWS - - - */
 /*create view named student_and_courses based on the result of previous query*/
